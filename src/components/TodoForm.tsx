@@ -17,15 +17,15 @@ const TodoForm = ({ input, setInput, onAdd }: TodoFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="px-4">
       <input
         type="text"
         placeholder="Enter Todos!"
         value={input}
         onChange={handleInput}
-        className="m-1 px-2 py-1 text-2xl border-2 rounded-md"
+        className="m-1 px-2 py-1 text-lg md:text-2xl border-2 rounded-md w-full sm:w-auto"
       />
-      <button type="submit" className="m-1">
+      <button type="submit" className="m-1 text-base">
         Add
       </button>
     </form>

@@ -47,13 +47,13 @@ const TodoItem = ({
   };
 
   return (
-    <div className="flex justify-between w-1/2 m-auto items-baseline">
-      <span className="flex items-baseline">
+    <div className="flex flex-col sm:flex-row justify-between w-full md:w-4/5 lg:w-1/2 m-auto items-center px-4 py-2">
+      <span className="flex items-center w-full sm:w-auto">
         <input
           type="checkbox"
           checked={todo.completed}
           onChange={() => onToggle(todo.id)}
-          className="m-2 scale-150 cursor-pointer"
+          className="m-2 scale-125 cursor-pointer"
         />
         {isEditing ? (
           <input
@@ -62,13 +62,13 @@ const TodoItem = ({
             value={newText}
             onChange={handleEditChange}
             onKeyDown={handleKeyDown}
-            className="m-1 px-2 py-1 text-2xl border-2 rounded-md"
+            className="m-1 px-2 py-1 text-lg md:text-2xl border-2 rounded-md w-full"
             autoFocus
           />
         ) : (
           <h1
             onClick={() => onToggle(todo.id)}
-            className={`m-1 text-2xl cursor-pointer ${
+            className={`m-1 text-lg md:text-2xl cursor-pointer break-words ${
               todo.completed ? "line-through text-zinc-500" : ""
             }`}
           >
@@ -77,17 +77,17 @@ const TodoItem = ({
           </h1>
         )}
       </span>
-      <span>
+      <span className="flex mt-2 sm:mt-0">
         {isEditing ? (
-          <button onClick={handleEditSubmit} className="m-1">
+          <button onClick={handleEditSubmit} className="m-1 text-base">
             Save
           </button>
         ) : (
-          <button onClick={() => setIsEditing(true)} className="m-1">
+          <button onClick={() => setIsEditing(true)} className="m-1 text-base">
             Edit
           </button>
         )}
-        <button onClick={() => onDelete(todo.id)} className="m-1">
+        <button onClick={() => onDelete(todo.id)} className="m-1 text-base">
           Delete
         </button>
       </span>

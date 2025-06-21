@@ -101,11 +101,11 @@ const Todo = () => {
   });
 
   return (
-    <div>
-      <h1 className="m-4 text-6xl font-medium">Todo</h1>
+    <div className="px-4">
+      <h1 className="m-4 text-4xl md:text-6xl font-medium">Todo</h1>
       <TodoForm input={input} setInput={setInput} onAdd={handleAdd} />
       <div>
-        <h1 className="mt-2 text-3xl">
+        <h1 className="mt-2 text-xl md:text-3xl">
           {todos.length > 0 ? "Todos are below!" : "List is empty, add todos!"}
         </h1>
         {todos.length > 0 && (

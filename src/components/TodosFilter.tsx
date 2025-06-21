@@ -12,15 +12,21 @@ const TodosFilter = ({ setFilterStatus }: TodosFilterProps) => {
   };
 
   return (
-    <div className="flex justify-between w-1/2 m-auto">
-      <button className="my-4" onClick={() => handleFilterChange("all")}>
+    <div className="flex flex-col sm:flex-row justify-between w-full md:w-4/5 lg:w-1/2 m-auto px-4">
+      <button
+        className="my-2 sm:my-4 text-base"
+        onClick={() => handleFilterChange("all")}
+      >
         All
       </button>
-      <button className="my-4" onClick={() => handleFilterChange("completed")}>
+      <button
+        className="my-2 sm:my-4 text-base"
+        onClick={() => handleFilterChange("completed")}
+      >
         Completed
       </button>
       <button
-        className="my-4"
+        className="my-2 sm:my-4 text-base"
         onClick={() => handleFilterChange("notCompleted")}
       >
         Not Completed
