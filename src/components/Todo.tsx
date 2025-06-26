@@ -26,9 +26,7 @@ const Todo = () => {
   }, []);
 
   useEffect(() => {
-    if (todos.length > 0) {
-      localStorage.setItem("todos", JSON.stringify(todos));
-    }
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   const handleAdd = () => {
@@ -55,9 +53,7 @@ const Todo = () => {
   };
 
   const handleDelete = (id: string) => {
-    const updatedTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const handleToggle = (id: string) => {
@@ -90,7 +86,6 @@ const Todo = () => {
   const handleClear = () => {
     if (window.confirm("Are you sure! do you want to clear entire list?")) {
       setTodos([]);
-      localStorage.removeItem("todos");
     }
   };
 
